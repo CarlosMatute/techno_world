@@ -51,19 +51,37 @@ Página web corporativa estática tipo landing page para **TECHNO WORLD**, empre
 - Cada tarjeta incluye: icono en contenedor redondeado, título, línea decorativa, descripción, lista de checkmarks con iconos
 - Animación hover: la tarjeta se eleva (`-8px`), sombra加深, el icono escala y rota
 
-### 4. Empresa / ADN (`#empresa`)
-- Fondo oscuro (`bg-twNegro`), grid de 2 columnas
-- Misión y Visión con barras decorativas azules
-- Indicador numérico "150+ Proyectos Exitosos"
-- Diseño con bordes redondeados y capas
+### 4. Clientes y Socios
+- Fondo blanco con grid de hasta 4 columnas
+- Logos reales desde `assets/img/clientes/` con nombre de cada empresa
+- Efecto hover: elevación sutil (`-translate-y-1`) y sombra azul
+- Clientes actuales: Centro Médico Díaz, Inversiones Rivera Carvajal
 
-### 5. Contacto (`#contacto`)
+### 5. Empresa / ADN (`#empresa`)
+- Fondo oscuro (`bg-twNegro`), grid de 2 columnas
+- Título: "Más que Tecnología, somos Socios."
+- **Misión**: "Ofrecer servicios de alta calidad en soporte técnico y en la venta de artículos, brindando seguridad y confianza a nuestros clientes en sus equipos tecnológicos, realizando diagnósticos profundos de sus problemas para ejecutar una solución fiable y segura."
+- **Visión**: "Ser líderes en el campo de la tecnología siendo una empresa comprometida en sus ejecuciones y brindar el mejor servicio merecido a nuestros clientes. Lograr ser una entidad importante por la población y muchas empresas produciendo el apoyo que más demanden."
+- Cada una con barra decorativa azul (`<span class="w-8 h-1 bg-twAzul">`)
+- Indicador numérico "150+ Proyectos Exitosos" en card con fondo oscuro y borde
+- Diseño con bordes redondeados (`rounded-[3rem]` y `rounded-[2rem]`) y capas superpuestas
+
+### 6. Contacto (`#contacto`)
 - Card dividida en 2 columnas dentro de un contenedor con sombra
 - Lado izquierdo (fondo azul): título, descripción, email y ubicación
 - Lado derecho (blanco): formulario con campos Nombre, Empresa, Requerimiento
 - Botón "Enviar Solicitud"
 
-### 6. Footer
+### 7. Ubicación y Mapa
+- Sección con grid `md:grid-cols-5`: mapa ocupa 3 columnas, tarjeta de dirección ocupa 2
+- **Mapa**: Google Maps embebido con borde redondeado, sombra, altura fija de 380px
+- **Tarjeta de dirección**: fondo blanco, icono de ubicación destacado, datos de contacto:
+  - Dirección: Hub Tecnológico, Torre Norte, Piso 12, Of. 1205
+  - Teléfono: +504 2200-0000 (horario Lun-Vie 8:00-18:00)
+  - Email: contacto@technoworld.com
+  - Cada línea con icono Ionicons y descripción
+
+### 8. Footer
 - Grid de 4 columnas: logo + descripción, navegación, servicios, legal
 - Copyright 2026
 
