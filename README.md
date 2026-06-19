@@ -60,7 +60,6 @@
             </ul>
         </nav>
     </header>
-
     <main>
         <!-- Hero Section -->
         <section id="inicio" class="hero-pattern pt-40 pb-32 text-white relative overflow-hidden">
@@ -73,7 +72,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Solutions -->
         <section id="servicios" class="py-32 bg-white">
             <div class="container mx-auto px-6">
@@ -81,7 +79,6 @@
                     <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">Verticales de Servicio</h2>
                     <p class="text-twNegro/60 text-lg">Soluciones integrales para la era de la transformación digital.</p>
                 </div>
-
                 <div class="grid md:grid-cols-3 gap-12">
                     <div class="p-10 bg-twBlanco/30 rounded-3xl border border-twNegro/5 hover:border-twAzul/30 transition-all reveal">
                         <ion-icon name="hardware-chip-outline" class="text-5xl text-twAzul mb-8"></ion-icon>
@@ -101,7 +98,6 @@
                 </div>
             </div>
         </section>
-
         <!-- DNA Section -->
         <section id="empresa" class="py-32 bg-twNegro text-twBlanco">
             <div class="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
@@ -133,7 +129,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Contact -->
         <section id="contacto" class="py-32">
             <div class="container mx-auto px-6">
@@ -175,7 +170,6 @@
             </div>
         </section>
     </main>
-
     <footer class="py-20 bg-twNegro text-twBlanco border-t border-twBlanco/5">
         <div class="container mx-auto px-6 grid md:grid-cols-4 gap-16 mb-20">
             <div class="col-span-1 md:col-span-1">
@@ -213,7 +207,6 @@
             &copy; 2026 TECHNO WORLD. Todos los derechos reservados.
         </div>
     </footer>
-
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const reveals = document.querySelectorAll(".reveal");
