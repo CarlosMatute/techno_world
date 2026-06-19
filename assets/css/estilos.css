@@ -1,0 +1,42 @@
+.hero-pattern {
+    background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-color: #1a1a2e;
+    position: relative;
+}
+.hero-pattern::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26,26,46,0.92) 0%, rgba(63,89,129,0.85) 100%);
+    z-index: 1;
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.card-service {
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card-service:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(63,89,129,0.15);
+}
+.card-service:hover .service-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+.service-icon {
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.section-divider {
+    background: linear-gradient(90deg, transparent, #3f5981, transparent);
+    height: 2px;
+    width: 80px;
+}

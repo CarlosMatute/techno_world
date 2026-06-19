@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TECHNO WORLD | Soluciones Tecnológicas Globales</title>
+    <title>TECHNO WORLD</title>
+    <link rel="icon" type="image/png" href="assets/img/LOGO%20TW%20PERFIL%202.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,33 +24,16 @@
             }
         }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/fuentes.css">
+    <link rel="stylesheet" href="assets/css/estilos.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <style>
-        .hero-pattern {
-            background-image: url("imagenes/fondo.png");
-            background-blend-mode: overlay;
-            background-color: #323232;
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
 </head>
 <body class="bg-twBlanco text-twNegro font-sans">
     <!-- Navbar -->
     <header class="fixed top-0 w-full z-50 bg-twBlanco/90 backdrop-blur-md border-b border-twNegro/5 h-20 flex items-center">
         <nav class="container mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center gap-4">
-                <img src="logo.png" alt="TECHNO WORLD" class="h-12">
+                <img src="assets/img/logo.png" alt="TECHNO WORLD" class="h-12">
                 <span class="text-xl font-display font-extrabold text-twAzul tracking-tight">TECHNO WORLD</span>
             </div>
             <ul class="hidden md:flex items-center gap-10 font-medium text-twNegro/70">
@@ -62,38 +46,71 @@
     </header>
     <main>
         <!-- Hero Section -->
-        <section id="inicio" class="hero-pattern pt-40 pb-32 text-white relative overflow-hidden">
+        <section id="inicio" class="hero-pattern min-h-screen flex items-center text-white relative overflow-hidden">
             <div class="container mx-auto px-6 relative z-10 text-center">
-                <h1 class="text-5xl md:text-7xl font-display font-extrabold mb-8 leading-tight">Expertos en <span class="text-twAzul">Sistemas</span> y Soluciones TI</h1>
-                <p class="text-lg md:text-xl text-twBlanco/80 max-w-2xl mx-auto mb-12">Impulsamos la productividad de tu organización con infraestructura robusta y soporte técnico especializado de clase mundial.</p>
-                <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="#servicios" class="bg-twAzul px-10 py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 transition-all">Nuestras Soluciones</a>
-                    <a href="#contacto" class="border-2 border-twBlanco/20 px-10 py-4 rounded-xl font-bold text-lg hover:bg-twBlanco/10 transition-all">Soporte Directo</a>
+                <div class="inline-block px-6 py-2 border border-twAzul/50 rounded-full text-twAzul text-sm font-semibold uppercase tracking-[0.2em] mb-8 bg-twAzul/10 backdrop-blur-sm reveal">Excelencia Tecnológica</div>
+                <h1 class="text-5xl md:text-7xl font-display font-extrabold mb-6 leading-tight reveal">Expertos en <span class="text-twAzul">Sistemas</span> y Soluciones TI</h1>
+                <p class="text-2xl md:text-3xl font-display font-bold text-twBlanco/90 max-w-3xl mx-auto mb-6 reveal">TODO UN MUNDO EN TECNOLOGIA</p>
+                <div class="flex justify-center mb-12 reveal">
+                    <div class="section-divider"></div>
+                </div>
+                <p class="text-lg md:text-xl text-twBlanco/70 max-w-2xl mx-auto mb-12 reveal">Impulsamos la productividad de tu organización con servicios técnicos especializados de clase mundial.</p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center reveal">
+                    <a href="#servicios" class="bg-twAzul px-10 py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 transition-all shadow-lg shadow-twAzul/30">Nuestros Servicios</a>
+                    <a href="#contacto" class="border-2 border-twBlanco/30 px-10 py-4 rounded-xl font-bold text-lg hover:bg-twBlanco/10 transition-all backdrop-blur-sm">Solicitar Cotización</a>
                 </div>
             </div>
         </section>
-        <!-- Solutions -->
-        <section id="servicios" class="py-32 bg-white">
+        <!-- Services -->
+        <section id="servicios" class="py-32 bg-gradient-to-b from-white to-twBlanco/50">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-24 reveal">
-                    <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">Verticales de Servicio</h2>
-                    <p class="text-twNegro/60 text-lg">Soluciones integrales para la era de la transformación digital.</p>
+                <div class="text-center mb-20 reveal">
+                    <span class="text-twAzul font-semibold uppercase tracking-[0.2em] text-sm">Nuestra Oferta</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold mt-4 mb-6">Servicios Profesionales</h2>
+                    <div class="flex justify-center mb-6">
+                        <div class="section-divider"></div>
+                    </div>
+                    <p class="text-twNegro/60 text-lg max-w-2xl mx-auto">Soluciones integrales respaldadas por más de una década de experiencia en el sector tecnológico.</p>
                 </div>
-                <div class="grid md:grid-cols-3 gap-12">
-                    <div class="p-10 bg-twBlanco/30 rounded-3xl border border-twNegro/5 hover:border-twAzul/30 transition-all reveal">
-                        <ion-icon name="hardware-chip-outline" class="text-5xl text-twAzul mb-8"></ion-icon>
-                        <h3 class="text-2xl font-bold mb-4 text-twNegro">Infraestructura Crítica</h3>
-                        <p class="text-twNegro/70 leading-relaxed">Instalación y mantenimiento de servidores, redes y centros de datos con estándares internacionales.</p>
+                <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                    <div class="card-service p-10 bg-white rounded-3xl border border-twNegro/5 shadow-xl shadow-twNegro/5 reveal group">
+                        <div class="w-20 h-20 bg-twAzul/10 rounded-2xl flex items-center justify-center mb-8 service-icon">
+                            <ion-icon name="construct-outline" class="text-4xl text-twAzul"></ion-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-twNegro">Reparación y Mantenimiento</h3>
+                        <div class="w-12 h-1 bg-twAzul/30 rounded-full mb-6"></div>
+                        <p class="text-twNegro/70 leading-relaxed mb-6">Diagnóstico, reparación y mantenimiento preventivo de equipos de cómputo, servidores y redes. Garantizamos el óptimo funcionamiento de tu infraestructura técnica.</p>
+                        <ul class="space-y-3 text-sm text-twNegro/60">
+                            <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Mantenimiento preventivo y correctivo</li>
+                            <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Reparación de hardware y software</li>
+                            <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Optimización de rendimiento</li>
+                        </ul>
                     </div>
-                    <div class="p-10 bg-twBlanco/30 rounded-3xl border border-twNegro/5 hover:border-twAzul/30 transition-all reveal">
-                        <ion-icon name="shield-checkmark-outline" class="text-5xl text-twAzul mb-8"></ion-icon>
-                        <h3 class="text-2xl font-bold mb-4 text-twNegro">Seguridad de Red</h3>
-                        <p class="text-twNegro/70 leading-relaxed">Blindaje digital y protocolos de protección para la integridad de la información corporativa.</p>
+                    <div class="card-service p-10 bg-white rounded-3xl border border-twNegro/5 shadow-xl shadow-twNegro/5 reveal group md:translate-y-8">
+                        <div class="w-20 h-20 bg-twAzul/10 rounded-2xl flex items-center justify-center mb-8 service-icon">
+                            <ion-icon name="code-slash-outline" class="text-4xl text-twAzul"></ion-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-twNegro">Desarrollo de Sistemas</h3>
+                        <div class="w-12 h-1 bg-twAzul/30 rounded-full mb-6"></div>
+                        <p class="text-twNegro/70 leading-relaxed mb-6">Creamos aplicaciones web, móviles y sistemas a la medida para optimizar tus procesos empresariales con tecnología de vanguardia.</p>
+                        <ul class="space-y-3 text-sm text-twNegro/60">
+                            <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Desarrollo web y móvil a medida</li>
+                            <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Sistemas de gestión empresarial</li>
+                            <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Integración de APIs y servicios cloud</li>
+                        </ul>
                     </div>
-                    <div class="p-10 bg-twBlanco/30 rounded-3xl border border-twNegro/5 hover:border-twAzul/30 transition-all reveal">
-                        <ion-icon name="headset-outline" class="text-5xl text-twAzul mb-8"></ion-icon>
-                        <h3 class="text-2xl font-bold mb-4 text-twNegro">Outsourcing TI</h3>
-                        <p class="text-twNegro/70 leading-relaxed">Soporte técnico especializado 24/7 para garantizar la continuidad operativa de su empresa.</p>
+                    <div class="card-service p-10 bg-white rounded-3xl border border-twNegro/5 shadow-xl shadow-twNegro/5 reveal group">
+                        <div class="w-20 h-20 bg-twAzul/10 rounded-2xl flex items-center justify-center mb-8 service-icon">
+                            <ion-icon name="headset-outline" class="text-4xl text-twAzul"></ion-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-twNegro">Soporte Técnico</h3>
+                        <div class="w-12 h-1 bg-twAzul/30 rounded-full mb-6"></div>
+                        <p class="text-twNegro/70 leading-relaxed mb-6">Asistencia técnica especializada para resolver incidentes, implementar soluciones y garantizar la continuidad operativa de tu negocio.</p>
+                        <ul class="space-y-3 text-sm text-twNegro/60">
+                            <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Soporte remoto y presencial</li>
+                            <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Mesa de ayuda y atención prioritaria</li>
+                            <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Monitoreo y mantenimiento continuo</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -174,7 +191,7 @@
         <div class="container mx-auto px-6 grid md:grid-cols-4 gap-16 mb-20">
             <div class="col-span-1 md:col-span-1">
                 <div class="flex items-center gap-3 mb-8">
-                    <img src="logo.png" alt="Logo" class="h-10">
+                    <img src="assets/img/logo.png" alt="Logo" class="h-10">
                     <span class="text-xl font-display font-extrabold tracking-tight">TECHNO WORLD</span>
                 </div>
                 <p class="text-twBlanco/40 leading-relaxed">Liderando la innovación tecnológica con compromiso y excelencia técnica desde 2010.</p>
@@ -190,9 +207,9 @@
             <div>
                 <h4 class="font-bold mb-8 uppercase tracking-widest text-xs text-twAzul">Servicios</h4>
                 <ul class="space-y-4 text-twBlanco/60">
-                    <li>Hardware & Networking</li>
-                    <li>Seguridad Digital</li>
-                    <li>Cloud Solutions</li>
+                    <li>Reparación y Mantenimiento</li>
+                    <li>Desarrollo de Sistemas</li>
+                    <li>Soporte Técnico</li>
                 </ul>
             </div>
             <div>
