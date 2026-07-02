@@ -76,9 +76,9 @@ Página web corporativa estática tipo landing page para **TECHNO WORLD**, empre
 - Sección con grid `md:grid-cols-5`: mapa ocupa 3 columnas, tarjeta de dirección ocupa 2
 - **Mapa**: Google Maps embebido con borde redondeado, sombra, altura fija de 380px
 - **Tarjeta de dirección**: fondo blanco, icono de ubicación destacado, datos de contacto:
-  - Dirección: Hub Tecnológico, Torre Norte, Piso 12, Of. 1205
-  - Teléfono: +504 2200-0000 (horario Lun-Vie 8:00-18:00)
-  - Email: contacto@technoworld.com
+  - Dirección: Res. El Llano 2da. Etapa, 5ta. Calle Catacamas Olancho, 16201
+  - Teléfono: +504 9209-3796 (horario Lun-Vie 8:00-18:00)
+  - Email: technoworldhn@gmail.com
   - Cada línea con icono Ionicons y descripción
 
 ### 8. Footer

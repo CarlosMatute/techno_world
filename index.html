@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -15,6 +16,13 @@
                         twNegro: "#323232",
                         twBlanco: "#e6e6e6",
                         twAccent: "#4A90E2",
+                        twText: "var(--text-body)",
+                        twBg: "var(--bg-body)",
+                        twCard: "var(--bg-card)",
+                        twMuted: "var(--text-muted)",
+                        twDim: "var(--text-dim)",
+                        twFaint: "var(--text-faint)",
+                        twBorder: "var(--border-subtle)",
                     },
                     fontFamily: {
                         sans: ["Inter", "sans-serif"],
@@ -28,28 +36,47 @@
     <link rel="stylesheet" href="assets/css/estilos.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
-<body class="bg-twBlanco text-twNegro font-sans">
+<body class="bg-twBg text-twText font-sans">
     <!-- Navbar -->
-    <header class="fixed top-0 w-full z-50 bg-twBlanco/90 backdrop-blur-md border-b border-twNegro/5 h-20 flex items-center">
+    <header class="fixed top-0 w-full z-50 bg-[var(--header-bg)] backdrop-blur-md border-b border-twBorder h-20 flex items-center">
         <nav class="container mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center gap-4">
-                <img src="assets/img/logo.png" alt="TECHNO WORLD" class="h-12">
+                <img src="assets/img/LOGO TW PERFIL 2.png" alt="TECHNO WORLD" class="h-12 w-auto" id="logoHeader">
                 <span class="text-xl font-display font-extrabold text-twAzul tracking-tight">TECHNO WORLD</span>
             </div>
-            <ul class="hidden md:flex items-center gap-10 font-medium text-twNegro/70">
+            <ul class="hidden md:flex items-center gap-10 font-medium text-twMuted dark:text-white">
                 <li><a href="#inicio" class="hover:text-twAzul transition-colors">Inicio</a></li>
                 <li><a href="#servicios" class="hover:text-twAzul transition-colors">Servicios</a></li>
                 <li><a href="#empresa" class="hover:text-twAzul transition-colors">Empresa</a></li>
                 <li><a href="#contacto" class="bg-twAzul text-white px-8 py-2.5 rounded-lg hover:shadow-lg hover:shadow-twAzul/20 transition-all">Cotizar</a></li>
+                <li>
+                    <button id="themeToggle" class="text-xl text-twMuted dark:text-white hover:text-twAzul transition-colors p-2" aria-label="Cambiar tema">
+                        <ion-icon name="moon-outline"></ion-icon>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
     <main>
         <!-- Hero Section -->
         <section id="inicio" class="hero-pattern min-h-screen flex items-center text-white relative overflow-hidden">
+            <!-- Animated tech elements -->
+            <div class="hero-grid"></div>
+            <div class="scan-line"></div>
+            <div class="tech-shape tech-shape-1"></div>
+            <div class="tech-shape tech-shape-2"></div>
+            <div class="tech-shape tech-shape-3"></div>
+            <div class="tech-shape tech-shape-4"></div>
+            <div class="tech-dot"></div>
+            <div class="tech-dot"></div>
+            <div class="tech-dot"></div>
+            <div class="tech-dot"></div>
+            <div class="tech-dot"></div>
+            <div class="mouse-glow" id="mouseGlow"></div>
+            <canvas id="techCanvas" class="absolute inset-0 z-[1] pointer-events-none w-full h-full"></canvas>
             <div class="container mx-auto px-6 relative z-10 text-center">
                 <div class="inline-block px-6 py-2 border border-twAzul/50 rounded-full text-twAzul text-sm font-semibold uppercase tracking-[0.2em] mb-8 bg-twAzul/10 backdrop-blur-sm reveal">Excelencia Tecnológica</div>
-                <h1 class="text-5xl md:text-7xl font-display font-extrabold mb-6 leading-tight reveal">Expertos en <span class="text-twAzul">Sistemas</span> y Soluciones TI</h1>
+                <h1 class="hero-title text-5xl md:text-7xl font-display font-extrabold mb-6 leading-tight reveal">Expertos en <span class="text-twAzul">Sistemas</span> y Soluciones TI</h1>
                 <p class="text-2xl md:text-3xl font-display font-bold text-twBlanco/90 max-w-3xl mx-auto mb-6 reveal">TODO UN MUNDO EN TECNOLOGIA</p>
                 <div class="flex justify-center mb-12 reveal">
                     <div class="section-divider"></div>
@@ -70,43 +97,43 @@
                     <div class="flex justify-center mb-6">
                         <div class="section-divider"></div>
                     </div>
-                    <p class="text-twNegro/60 text-lg max-w-2xl mx-auto">Soluciones integrales respaldadas por más de una década de experiencia en el sector tecnológico.</p>
+                    <p class="text-twMuted text-lg max-w-2xl mx-auto">Soluciones integrales respaldadas por más de una década de experiencia en el sector tecnológico.</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-                    <div class="card-service p-10 bg-white rounded-3xl border border-twNegro/5 shadow-xl shadow-twNegro/5 reveal group">
+                    <div class="card-service p-10 bg-twCard rounded-3xl border border-twBorder shadow-xl reveal group">
                         <div class="w-20 h-20 bg-twAzul/10 rounded-2xl flex items-center justify-center mb-8 service-icon">
                             <ion-icon name="construct-outline" class="text-4xl text-twAzul"></ion-icon>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-twNegro">Reparación y Mantenimiento</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-twText">Reparación y Mantenimiento</h3>
                         <div class="w-12 h-1 bg-twAzul/30 rounded-full mb-6"></div>
-                        <p class="text-twNegro/70 leading-relaxed mb-6">Diagnóstico, reparación y mantenimiento preventivo de equipos de cómputo, servidores y redes. Garantizamos el óptimo funcionamiento de tu infraestructura técnica.</p>
-                        <ul class="space-y-3 text-sm text-twNegro/60">
+                        <p class="text-twMuted leading-relaxed mb-6">Diagnóstico, reparación y mantenimiento preventivo de equipos de cómputo, servidores y redes. Garantizamos el óptimo funcionamiento de tu infraestructura técnica.</p>
+                        <ul class="space-y-3 text-sm text-twMuted">
                             <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Mantenimiento preventivo y correctivo</li>
                             <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Reparación de hardware y software</li>
                             <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Optimización de rendimiento</li>
                         </ul>
                     </div>
-                    <div class="card-service p-10 bg-white rounded-3xl border border-twNegro/5 shadow-xl shadow-twNegro/5 reveal group md:translate-y-8">
+                    <div class="card-service p-10 bg-twCard rounded-3xl border border-twBorder shadow-xl reveal group md:translate-y-8">
                         <div class="w-20 h-20 bg-twAzul/10 rounded-2xl flex items-center justify-center mb-8 service-icon">
                             <ion-icon name="code-slash-outline" class="text-4xl text-twAzul"></ion-icon>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-twNegro">Desarrollo de Sistemas</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-twText">Desarrollo de Sistemas</h3>
                         <div class="w-12 h-1 bg-twAzul/30 rounded-full mb-6"></div>
-                        <p class="text-twNegro/70 leading-relaxed mb-6">Creamos aplicaciones web, móviles y sistemas a la medida para optimizar tus procesos empresariales con tecnología de vanguardia.</p>
-                        <ul class="space-y-3 text-sm text-twNegro/60">
+                        <p class="text-twMuted leading-relaxed mb-6">Creamos aplicaciones web, móviles y sistemas a la medida para optimizar tus procesos empresariales con tecnología de vanguardia.</p>
+                        <ul class="space-y-3 text-sm text-twMuted">
                             <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Desarrollo web y móvil a medida</li>
                             <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Sistemas de gestión empresarial</li>
                             <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Integración de APIs y servicios cloud</li>
                         </ul>
                     </div>
-                    <div class="card-service p-10 bg-white rounded-3xl border border-twNegro/5 shadow-xl shadow-twNegro/5 reveal group">
+                    <div class="card-service p-10 bg-twCard rounded-3xl border border-twBorder shadow-xl reveal group">
                         <div class="w-20 h-20 bg-twAzul/10 rounded-2xl flex items-center justify-center mb-8 service-icon">
                             <ion-icon name="headset-outline" class="text-4xl text-twAzul"></ion-icon>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-twNegro">Soporte Técnico</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-twText">Soporte Técnico</h3>
                         <div class="w-12 h-1 bg-twAzul/30 rounded-full mb-6"></div>
-                        <p class="text-twNegro/70 leading-relaxed mb-6">Asistencia técnica especializada para resolver incidentes, implementar soluciones y garantizar la continuidad operativa de tu negocio.</p>
-                        <ul class="space-y-3 text-sm text-twNegro/60">
+                        <p class="text-twMuted leading-relaxed mb-6">Asistencia técnica especializada para resolver incidentes, implementar soluciones y garantizar la continuidad operativa de tu negocio.</p>
+                        <ul class="space-y-3 text-sm text-twMuted">
                             <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Soporte remoto y presencial</li>
                             <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Mesa de ayuda y atención prioritaria</li>
                             <li class="flex items-center gap-3"><ion-icon name="checkmark-circle" class="text-twAzul text-lg shrink-0"></ion-icon>Monitoreo y mantenimiento continuo</li>
@@ -116,7 +143,7 @@
             </div>
         </section>
         <!-- Clients -->
-        <section class="py-32 bg-white">
+        <section class="py-32 bg-twCard">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-20 reveal">
                     <span class="text-twAzul font-semibold uppercase tracking-[0.2em] text-sm">Confianza</span>
@@ -124,16 +151,34 @@
                     <div class="flex justify-center mb-6">
                         <div class="section-divider"></div>
                     </div>
-                    <p class="text-twNegro/60 text-lg max-w-2xl mx-auto">Empresas líderes que confían en nuestra experiencia tecnológica para impulsar su transformación digital.</p>
+                    <p class="text-twMuted text-lg max-w-2xl mx-auto">Empresas líderes que confían en nuestra experiencia tecnológica para impulsar su transformación digital.</p>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-                    <div class="reveal bg-white rounded-2xl p-8 flex flex-col items-center justify-center border border-twNegro/5 hover:shadow-xl hover:shadow-twAzul/10 hover:-translate-y-1 transition-all">
-                        <img src="assets/img/clientes/centro_medico_diaz.jpg" alt="Centro Médico Díaz" class="h-16 w-auto object-contain mb-4">
-                        <p class="font-bold text-twNegro text-center">Centro Médico Díaz</p>
+                <div class="max-w-4xl mx-auto space-y-16">
+                    <div>
+                        <h3 class="text-center text-twAzul font-bold uppercase tracking-[0.2em] text-sm mb-10 reveal">Clientes</h3>
+                        <div class="grid grid-cols-2 gap-8">
+                            <div class="reveal bg-twCard rounded-2xl p-8 flex flex-col items-center justify-center border border-twBorder hover:shadow-xl hover:shadow-twAzul/10 hover:-translate-y-1 transition-all">
+                                <img src="assets/img/clientes/centro_medico_diaz.jpg" alt="Centro Médico Díaz" class="h-16 w-auto object-contain mb-4">
+                                <p class="font-bold text-twText text-center">Centro Médico Díaz</p>
+                            </div>
+                            <div class="reveal bg-twCard rounded-2xl p-8 flex flex-col items-center justify-center border border-twBorder hover:shadow-xl hover:shadow-twAzul/10 hover:-translate-y-1 transition-all">
+                                <img src="assets/img/clientes/inversiones_rivera_carvajal.png" alt="Inversiones Rivera Carvajal" class="h-16 w-auto object-contain mb-4">
+                                <p class="font-bold text-twText text-center">Inversiones Rivera Carvajal</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="reveal bg-white rounded-2xl p-8 flex flex-col items-center justify-center border border-twNegro/5 hover:shadow-xl hover:shadow-twAzul/10 hover:-translate-y-1 transition-all">
-                        <img src="assets/img/clientes/inversiones_rivera_carvajal.png" alt="Inversiones Rivera Carvajal" class="h-16 w-auto object-contain mb-4">
-                        <p class="font-bold text-twNegro text-center">Inversiones Rivera Carvajal</p>
+                    <div class="border-t border-twBorder pt-16">
+                        <h3 class="text-center text-twAzul font-bold uppercase tracking-[0.2em] text-sm mb-10 reveal">Socios Estratégicos</h3>
+                        <div class="grid grid-cols-2 gap-8">
+                            <div class="reveal bg-twCard rounded-2xl p-8 flex flex-col items-center justify-center border border-twBorder hover:shadow-xl hover:shadow-twAzul/10 hover:-translate-y-1 transition-all">
+                                <img src="assets/img/clientes/DEVCO.jpeg" alt="DEVCO" class="h-16 w-auto object-contain mb-4">
+                                <p class="font-bold text-twText text-center">DEVCO</p>
+                            </div>
+                            <div class="reveal bg-twCard rounded-2xl p-8 flex flex-col items-center justify-center border border-twBorder hover:shadow-xl hover:shadow-twAzul/10 hover:-translate-y-1 transition-all">
+                                <img src="assets/img/clientes/syntax.jpg" alt="SYNTAX" class="h-16 w-auto object-contain mb-4">
+                                <p class="font-bold text-twText text-center">SYNTAX</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -172,84 +217,105 @@
         <!-- Contact -->
         <section id="contacto" class="py-32">
             <div class="container mx-auto px-6">
-                <div class="max-w-5xl mx-auto bg-white rounded-[3rem] shadow-2xl shadow-twNegro/10 overflow-hidden grid md:grid-cols-2 reveal">
+                <div class="max-w-5xl mx-auto bg-twCard rounded-[3rem] shadow-2xl overflow-hidden grid md:grid-cols-2 reveal">
                     <div class="bg-twAzul p-16 text-white flex flex-col justify-center">
-                        <h2 class="text-4xl font-display font-bold mb-8">Hablemos de tu Próximo Salto Tecnológico</h2>
-                        <p class="text-twBlanco/80 mb-10">Agenda una consultoría técnica gratuita con nuestros especialistas senior.</p>
+                        <h2 class="text-4xl font-display font-bold mb-8">¿En qué podemos ayudarte?</h2>
+                        <p class="text-twBlanco/80 mb-10">Estamos para atender tus consultas, cotizaciones y solicitudes de soporte técnico.</p>
                         <div class="space-y-6">
                             <div class="flex items-center gap-4">
+                                <ion-icon name="call-outline" class="text-2xl"></ion-icon>
+                                <span>+504 9209-3796</span>
+                            </div>
+                            <div class="flex items-center gap-4">
                                 <ion-icon name="mail-outline" class="text-2xl"></ion-icon>
-                                <span>contacto@technoworld.com</span>
+                                <span>technoworldhn@gmail.com</span>
                             </div>
                             <div class="flex items-center gap-4">
                                 <ion-icon name="location-outline" class="text-2xl"></ion-icon>
-                                <span>Hub Tecnológico, Torre Norte</span>
+                                <span>Res. El Llano 2da. Etapa, 5ta. Calle Catacamas Olancho, 16201</span>
                             </div>
                         </div>
                     </div>
                     <div class="p-16">
-                        <form action="#" class="space-y-8">
+                        <form id="contactForm" action="send.php" method="POST" class="space-y-8">
                             <div class="grid grid-cols-2 gap-6">
                                 <div>
-                                    <label class="block text-xs font-bold uppercase text-twNegro/40 mb-2">Nombre</label>
-                                    <input type="text" class="w-full bg-twBlanco/50 border border-twNegro/10 rounded-xl px-4 py-4 outline-none focus:border-twAzul">
+                                    <label class="block text-xs font-bold uppercase text-twFaint mb-2">Nombre Completo</label>
+                                    <input type="text" name="nombre" required class="w-full bg-[var(--bg-input)] border border-[var(--border-light)] rounded-xl px-4 py-4 outline-none focus:border-twAzul">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold uppercase text-twNegro/40 mb-2">Empresa</label>
-                                    <input type="text" class="w-full bg-twBlanco/50 border border-twNegro/10 rounded-xl px-4 py-4 outline-none focus:border-twAzul">
+                                    <label class="block text-xs font-bold uppercase text-twFaint mb-2">Correo Electrónico</label>
+                                    <input type="email" name="email" required class="w-full bg-[var(--bg-input)] border border-[var(--border-light)] rounded-xl px-4 py-4 outline-none focus:border-twAzul">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-twFaint mb-2">Teléfono</label>
+                                    <input type="tel" name="telefono" class="w-full bg-[var(--bg-input)] border border-[var(--border-light)] rounded-xl px-4 py-4 outline-none focus:border-twAzul">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-twFaint mb-2">Tipo de Consulta</label>
+                                    <select name="tipo" class="w-full bg-[var(--bg-input)] border border-[var(--border-light)] rounded-xl px-4 py-4 outline-none focus:border-twAzul text-twMuted">
+                                        <option value="">Selecciona una opción</option>
+                                        <option value="soporte">Soporte Técnico</option>
+                                        <option value="cotizacion">Cotización</option>
+                                        <option value="consulta">Consulta General</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold uppercase text-twNegro/40 mb-2">Requerimiento</label>
-                                <textarea rows="4" class="w-full bg-twBlanco/50 border border-twNegro/10 rounded-xl px-4 py-4 outline-none focus:border-twAzul resize-none"></textarea>
+                                <label class="block text-xs font-bold uppercase text-twFaint mb-2">Mensaje</label>
+                                <textarea name="mensaje" required rows="4" class="w-full bg-[var(--bg-input)] border border-[var(--border-light)] rounded-xl px-4 py-4 outline-none focus:border-twAzul resize-none"></textarea>
                             </div>
-                            <button class="w-full bg-twAzul text-white py-5 rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-twAzul/30 transition-all">Enviar Solicitud</button>
+                            <button type="submit" id="submitBtn" class="w-full bg-twAzul text-white py-5 rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-twAzul/30 transition-all">Enviar Mensaje</button>
+                            <div id="formFeedback" class="hidden text-center text-sm font-semibold"></div>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Map -->
-        <section class="py-20 bg-twNegro/5">
+        <section class="py-20 bg-[var(--bg-card)]">
             <div class="container mx-auto px-6">
                 <div class="max-w-6xl mx-auto">
                     <div class="text-center mb-14 reveal">
                         <span class="text-twAzul font-semibold uppercase tracking-[0.2em] text-sm">Ubicación</span>
-                        <h3 class="text-3xl md:text-4xl font-display font-bold mt-3 text-twNegro">Encuéntranos</h3>
+                        <h3 class="text-3xl md:text-4xl font-display font-bold mt-3 text-twText">Encuéntranos</h3>
                     </div>
                     <div class="grid md:grid-cols-5 gap-8 items-center reveal">
-                        <div class="md:col-span-3 rounded-3xl overflow-hidden shadow-2xl shadow-twNegro/10 border border-twNegro/5 h-[380px]">
+                        <div class="md:col-span-3 rounded-3xl overflow-hidden shadow-2xl border border-twBorder h-[380px]">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.5156631442703!2d-85.87524279375384!3d14.845677501198649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6c73a0e7bc8e93%3A0x9a5fbc44725d60f8!2sTechno%20World!5e0!3m2!1ses-419!2shn!4v1781903959198!5m2!1ses-419!2shn" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
-                        <div class="md:col-span-2 bg-white p-10 rounded-3xl shadow-xl shadow-twNegro/5 border border-twNegro/5">
+                        <div class="md:col-span-2 bg-twCard p-10 rounded-3xl shadow-xl border border-twBorder">
                             <div class="flex items-center gap-4 mb-8">
                                 <div class="w-14 h-14 bg-twAzul/10 rounded-2xl flex items-center justify-center shrink-0">
                                     <ion-icon name="location-outline" class="text-3xl text-twAzul"></ion-icon>
                                 </div>
                                 <div>
-                                    <h4 class="text-xl font-bold text-twNegro">Dirección</h4>
-                                    <p class="text-twNegro/50 text-sm">Oficina Central</p>
+                                    <h4 class="text-xl font-bold text-twText">Dirección</h4>
+                                    <p class="text-twDim text-sm">Oficina Central</p>
                                 </div>
                             </div>
-                            <div class="space-y-6 text-twNegro/70">
+                            <div class="space-y-6 text-twMuted">
                                 <div class="flex items-start gap-4">
                                     <ion-icon name="business-outline" class="text-xl text-twAzul shrink-0 mt-0.5"></ion-icon>
                                     <div>
-                                        <p class="font-semibold text-twNegro">Hub Tecnológico, Torre Norte</p>
-                                        <p class="text-sm">Piso 12, Oficina 1205</p>
+                                        <p class="font-semibold text-twText">Res. El Llano 2da. Etapa, 5ta. Calle</p>
+                                        <p class="text-sm">Catacamas Olancho, 16201</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start gap-4">
                                     <ion-icon name="call-outline" class="text-xl text-twAzul shrink-0 mt-0.5"></ion-icon>
                                     <div>
-                                        <p class="font-semibold text-twNegro">+504 2200-0000</p>
+                                        <p class="font-semibold text-twText">+504 9209-3796</p>
                                         <p class="text-sm">Lun-Vie 8:00 AM - 6:00 PM</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start gap-4">
                                     <ion-icon name="mail-outline" class="text-xl text-twAzul shrink-0 mt-0.5"></ion-icon>
                                     <div>
-                                        <p class="font-semibold text-twNegro">contacto@technoworld.com</p>
+                                        <p class="font-semibold text-twText">technoworldhn@gmail.com</p>
                                         <p class="text-sm">Respuesta en menos de 24h</p>
                                     </div>
                                 </div>
@@ -264,7 +330,7 @@
         <div class="container mx-auto px-6 grid md:grid-cols-4 gap-16 mb-20">
             <div class="col-span-1 md:col-span-1">
                 <div class="flex items-center gap-3 mb-8">
-                    <img src="assets/img/logo.png" alt="Logo" class="h-10">
+                    <img src="assets/img/LOGO TW PERFIL 2.png" alt="Logo" class="h-10 w-auto brightness-0 invert">
                     <span class="text-xl font-display font-extrabold tracking-tight">TECHNO WORLD</span>
                 </div>
                 <p class="text-twBlanco/40 leading-relaxed">Liderando la innovación tecnológica con compromiso y excelencia técnica desde 2010.</p>
@@ -297,8 +363,31 @@
             &copy; 2026 TECHNO WORLD. Todos los derechos reservados.
         </div>
     </footer>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/50492093796" target="_blank" rel="noopener noreferrer" class="whatsapp-float fixed bottom-8 right-8 z-50 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-xl hover:scale-110 hover:bg-green-400 transition-all duration-300">
+        <ion-icon name="logo-whatsapp" class="text-3xl text-white"></ion-icon>
+    </a>
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // Theme toggle
+            const html = document.documentElement;
+            const toggle = document.getElementById("themeToggle");
+            const icon = toggle.querySelector("ion-icon");
+            const logoH = document.getElementById("logoHeader");
+            function updateLogo(isDark) {
+                logoH.classList.toggle("brightness-0", isDark);
+                logoH.classList.toggle("invert", isDark);
+            }
+            const saved = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            if (saved === "dark") { html.classList.add("dark"); icon.name = "sunny-outline"; updateLogo(true); }
+            toggle.addEventListener("click", () => {
+                const isDark = html.classList.toggle("dark");
+                icon.name = isDark ? "sunny-outline" : "moon-outline";
+                updateLogo(isDark);
+                localStorage.setItem("theme", isDark ? "dark" : "light");
+            });
+
             const reveals = document.querySelectorAll(".reveal");
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -306,7 +395,206 @@
                 });
             }, { threshold: 0.1 });
             reveals.forEach(el => observer.observe(el));
+
+            // Mouse glow
+            const hero = document.getElementById("inicio");
+            const glow = document.getElementById("mouseGlow");
+            let glowVisible = false;
+
+            hero.addEventListener("mousemove", (e) => {
+                const rect = hero.getBoundingClientRect();
+                glow.style.left = e.clientX - rect.left + "px";
+                glow.style.top = e.clientY - rect.top + "px";
+                if (!glowVisible) { glow.style.opacity = "1"; glowVisible = true; }
+            });
+
+            hero.addEventListener("mouseleave", () => {
+                glow.style.opacity = "0";
+                glowVisible = false;
+            });
+
+            // Parallax
+            let ticking = false;
+            window.addEventListener("scroll", () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        const rect = hero.getBoundingClientRect();
+                        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                            const offset = (window.innerHeight - rect.top) * 0.04;
+                            hero.style.backgroundPosition = `center ${50 - offset}%`;
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            // Contact form
+            const form = document.getElementById("contactForm");
+            const feedback = document.getElementById("formFeedback");
+            const submitBtn = document.getElementById("submitBtn");
+            if (form) {
+                form.addEventListener("submit", async (e) => {
+                    e.preventDefault();
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = "Enviando...";
+                    feedback.classList.add("hidden");
+                    try {
+                        const res = await fetch("send.php", { method: "POST", body: new FormData(form) });
+                        const data = await res.json();
+                        feedback.textContent = data.message;
+                        feedback.className = "text-center text-sm font-semibold " + (data.success ? "text-green-600" : "text-red-500");
+                        feedback.classList.remove("hidden");
+                        if (data.success) form.reset();
+                    } catch {
+                        feedback.textContent = "Error de conexión. Intenta de nuevo.";
+                        feedback.className = "text-center text-sm font-semibold text-red-500";
+                        feedback.classList.remove("hidden");
+                    }
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "Enviar Mensaje";
+                });
+            }
         });
+    </script>
+
+    <script>
+        (function() {
+            const canvas = document.getElementById("techCanvas");
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+            const hero = document.getElementById("inicio");
+            let nodes = [], particles = [], w, h, time = 0;
+
+            function resize() {
+                const rect = hero.getBoundingClientRect();
+                w = canvas.width = rect.width;
+                h = canvas.height = rect.height;
+                createNodes();
+            }
+
+            function createNodes() {
+                nodes = [];
+                const count = Math.min(Math.floor((w * h) / 25000), 25);
+                for (let i = 0; i < count; i++) {
+                    nodes.push({
+                        x: Math.random() * w,
+                        y: Math.random() * h,
+                        vx: (Math.random() - 0.5) * 0.3,
+                        vy: (Math.random() - 0.5) * 0.3,
+                        r: Math.random() * 2.5 + 1.5,
+                        phase: Math.random() * Math.PI * 2,
+                    });
+                }
+                particles = [];
+                for (let i = 0; i < count * 2; i++) {
+                    particles.push({ a: 0, b: 0, t: Math.random(), speed: 0.002 + Math.random() * 0.004 });
+                }
+            }
+
+            function connectNodes() {
+                for (let i = 0; i < nodes.length; i++) {
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const dx = nodes[i].x - nodes[j].x;
+                        const dy = nodes[i].y - nodes[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 180) {
+                            const alpha = (1 - dist / 180) * 0.35;
+                            ctx.beginPath();
+                            ctx.moveTo(nodes[i].x, nodes[i].y);
+                            ctx.lineTo(nodes[j].x, nodes[j].y);
+                            ctx.strokeStyle = `rgba(74, 144, 226, ${alpha})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.stroke();
+                            particles.push({
+                                x1: nodes[i].x, y1: nodes[i].y,
+                                x2: nodes[j].x, y2: nodes[j].y,
+                                t: Math.random(),
+                                speed: 0.002 + Math.random() * 0.003,
+                                dist: dist,
+                            });
+                        }
+                    }
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, w, h);
+                time++;
+                const pulse = Math.sin(time * 0.02) * 0.3 + 0.7;
+
+                for (const n of nodes) {
+                    n.x += n.vx;
+                    n.y += n.vy;
+                    if (n.x < 0 || n.x > w) n.vx *= -1;
+                    if (n.y < 0 || n.y > h) n.vy *= -1;
+                }
+
+                const connections = [];
+                for (let i = 0; i < nodes.length; i++) {
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const dx = nodes[i].x - nodes[j].x;
+                        const dy = nodes[i].y - nodes[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 180) {
+                            const alpha = (1 - dist / 180) * 0.3;
+                            ctx.beginPath();
+                            ctx.moveTo(nodes[i].x, nodes[i].y);
+                            ctx.lineTo(nodes[j].x, nodes[j].y);
+                            ctx.strokeStyle = `rgba(74, 144, 226, ${alpha})`;
+                            ctx.lineWidth = 0.6;
+                            ctx.stroke();
+                            connections.push({ x1: nodes[i].x, y1: nodes[i].y, x2: nodes[j].x, y2: nodes[j].y, dist });
+                        }
+                    }
+                }
+
+                for (const c of connections) {
+                    for (const p of particles) {
+                        if (Math.random() > 0.999) {
+                            p.t = 0;
+                            p.x1 = c.x1; p.y1 = c.y1;
+                            p.x2 = c.x2; p.y2 = c.y2;
+                        }
+                    }
+                }
+
+                for (const p of particles) {
+                    if (p.x1 === undefined) continue;
+                    p.t += p.speed;
+                    if (p.t > 1) { p.t = 0; continue; }
+                    const x = p.x1 + (p.x2 - p.x1) * p.t;
+                    const y = p.y1 + (p.y2 - p.y1) * p.t;
+                    const a = Math.sin(p.t * Math.PI) * 0.8;
+                    ctx.beginPath();
+                    ctx.arc(x, y, 2, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(74, 144, 226, ${a})`;
+                    ctx.fill();
+                }
+
+                for (const n of nodes) {
+                    const glow = Math.sin(time * 0.03 + n.phase) * 0.4 + 0.6;
+                    const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 4);
+                    grad.addColorStop(0, `rgba(74, 144, 226, ${glow * 0.9})`);
+                    grad.addColorStop(0.3, `rgba(74, 144, 226, ${glow * 0.3})`);
+                    grad.addColorStop(1, "rgba(74, 144, 226, 0)");
+                    ctx.beginPath();
+                    ctx.arc(n.x, n.y, n.r * 4, 0, Math.PI * 2);
+                    ctx.fillStyle = grad;
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 255, 255, ${glow * 0.8})`;
+                    ctx.fill();
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            window.addEventListener("resize", resize);
+            resize();
+            animate();
+        })();
     </script>
 </body>
 </html>
