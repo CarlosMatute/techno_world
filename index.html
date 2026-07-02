@@ -23,6 +23,22 @@
                         twDim: "var(--text-dim)",
                         twFaint: "var(--text-faint)",
                         twBorder: "var(--border-subtle)",
+                        azul: {
+                            50: "#eef2f7", 100: "#d4dce9", 200: "#a9bbd3",
+                            300: "#7d9abc", 400: "#5e7ea5", 500: "#3f5981",
+                            600: "#324668", 700: "#25334d", 800: "#182133", 900: "#0b1019",
+                        },
+                        accent: {
+                            50: "#e8f4fd", 100: "#c8e6fa", 200: "#92cef5",
+                            300: "#5bb5f0", 400: "#4A90E2", 500: "#3a7bd5",
+                            600: "#2d62b0", 700: "#20498b", 800: "#133166", 900: "#0a1a3a",
+                        },
+                        neutro: {
+                            50: "#f8f8f8", 100: "#efefef", 200: "#dcdcdc",
+                            300: "#bdbdbd", 400: "#989898", 500: "#6f6f6f",
+                            600: "#505050", 700: "#323232", 800: "#252525",
+                            900: "#171717", 950: "#0f0f0f",
+                        },
                     },
                     fontFamily: {
                         sans: ["Inter", "sans-serif"],
@@ -44,11 +60,13 @@
                 <img src="assets/img/LOGO TW PERFIL 2.png" alt="TECHNO WORLD" class="h-12 w-auto" id="logoHeader">
                 <span class="text-xl font-display font-extrabold text-twAzul tracking-tight">TECHNO WORLD</span>
             </div>
-            <ul class="hidden md:flex items-center gap-10 font-medium text-twMuted dark:text-white">
+            <ul class="hidden md:flex items-center gap-8 font-medium text-twMuted dark:text-white">
                 <li><a href="#inicio" class="hover:text-twAzul transition-colors">Inicio</a></li>
                 <li><a href="#servicios" class="hover:text-twAzul transition-colors">Servicios</a></li>
+                <li><a href="#clientes" class="hover:text-twAzul transition-colors">Clientes</a></li>
                 <li><a href="#empresa" class="hover:text-twAzul transition-colors">Empresa</a></li>
-                <li><a href="#contacto" class="bg-twAzul text-white px-8 py-2.5 rounded-lg hover:shadow-lg hover:shadow-twAzul/20 transition-all">Cotizar</a></li>
+                <li><a href="#ubicacion" class="hover:text-twAzul transition-colors">Ubicación</a></li>
+                <li><a href="#contacto" class="btn-primary text-white px-6 py-2.5 rounded-lg">Contacto</a></li>
                 <li>
                     <button id="themeToggle" class="text-xl text-twMuted dark:text-white hover:text-twAzul transition-colors p-2" aria-label="Cambiar tema">
                         <ion-icon name="moon-outline"></ion-icon>
@@ -60,6 +78,10 @@
     <main>
         <!-- Hero Section -->
         <section id="inicio" class="hero-pattern min-h-screen flex items-center text-white relative overflow-hidden">
+            <video autoplay loop muted playsinline poster="assets/img/portada.gif">
+                <source src="assets/img/portada.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-br from-[rgba(26,26,46,0.6)] to-[rgba(63,89,129,0.55)] z-[1]"></div>
             <!-- Animated tech elements -->
             <div class="hero-grid"></div>
             <div class="scan-line"></div>
@@ -73,7 +95,7 @@
             <div class="tech-dot"></div>
             <div class="tech-dot"></div>
             <div class="mouse-glow" id="mouseGlow"></div>
-            <canvas id="techCanvas" class="absolute inset-0 z-[1] pointer-events-none w-full h-full"></canvas>
+            <canvas id="techCanvas" class="absolute inset-0 z-[2] pointer-events-none w-full h-full"></canvas>
             <div class="container mx-auto px-6 relative z-10 text-center">
                 <div class="inline-block px-6 py-2 border border-twAzul/50 rounded-full text-twAzul text-sm font-semibold uppercase tracking-[0.2em] mb-8 bg-twAzul/10 backdrop-blur-sm reveal">Excelencia Tecnológica</div>
                 <h1 class="hero-title text-5xl md:text-7xl font-display font-extrabold mb-6 leading-tight reveal">Expertos en <span class="text-twAzul">Sistemas</span> y Soluciones TI</h1>
@@ -83,13 +105,13 @@
                 </div>
                 <p class="text-lg md:text-xl text-twBlanco/70 max-w-2xl mx-auto mb-12 reveal">Impulsamos la productividad de tu organización con servicios técnicos especializados de clase mundial.</p>
                 <div class="flex flex-col sm:flex-row gap-6 justify-center reveal">
-                    <a href="#servicios" class="bg-twAzul px-10 py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 transition-all shadow-lg shadow-twAzul/30">Nuestros Servicios</a>
-                    <a href="#contacto" class="border-2 border-twBlanco/30 px-10 py-4 rounded-xl font-bold text-lg hover:bg-twBlanco/10 transition-all backdrop-blur-sm">Solicitar Cotización</a>
+                    <a href="#servicios" class="btn-primary px-10 py-4 rounded-xl font-bold text-lg">Nuestros Servicios</a>
+                    <a href="#contacto" class="btn-outline-light px-10 py-4 rounded-xl font-bold text-lg">Contacto</a>
                 </div>
             </div>
         </section>
         <!-- Services -->
-        <section id="servicios" class="py-32 bg-gradient-to-b from-white to-twBlanco/50">
+        <section id="servicios" class="py-32 bg-[var(--bg-body)]">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-20 reveal">
                     <span class="text-twAzul font-semibold uppercase tracking-[0.2em] text-sm">Nuestra Oferta</span>
@@ -143,7 +165,7 @@
             </div>
         </section>
         <!-- Clients -->
-        <section class="py-32 bg-twCard">
+        <section id="clientes" class="py-32 bg-twCard">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-20 reveal">
                     <span class="text-twAzul font-semibold uppercase tracking-[0.2em] text-sm">Confianza</span>
@@ -157,11 +179,11 @@
                     <div>
                         <h3 class="text-center text-twAzul font-bold uppercase tracking-[0.2em] text-sm mb-10 reveal">Clientes</h3>
                         <div class="grid grid-cols-2 gap-8">
-                            <div class="reveal bg-twCard rounded-2xl p-8 flex flex-col items-center justify-center border border-twBorder hover:shadow-xl hover:shadow-twAzul/10 hover:-translate-y-1 transition-all">
+                            <div class="reveal bg-[var(--bg-card-alt)] rounded-2xl p-8 flex flex-col items-center justify-center border border-twBorder hover:shadow-lg hover:shadow-twAzul/10 hover:-translate-y-1 transition-all">
                                 <img src="assets/img/clientes/centro_medico_diaz.jpg" alt="Centro Médico Díaz" class="h-16 w-auto object-contain mb-4">
                                 <p class="font-bold text-twText text-center">Centro Médico Díaz</p>
                             </div>
-                            <div class="reveal bg-twCard rounded-2xl p-8 flex flex-col items-center justify-center border border-twBorder hover:shadow-xl hover:shadow-twAzul/10 hover:-translate-y-1 transition-all">
+                            <div class="reveal bg-[var(--bg-card-alt)] rounded-2xl p-8 flex flex-col items-center justify-center border border-twBorder hover:shadow-lg hover:shadow-twAzul/10 hover:-translate-y-1 transition-all">
                                 <img src="assets/img/clientes/inversiones_rivera_carvajal.png" alt="Inversiones Rivera Carvajal" class="h-16 w-auto object-contain mb-4">
                                 <p class="font-bold text-twText text-center">Inversiones Rivera Carvajal</p>
                             </div>
@@ -170,11 +192,11 @@
                     <div class="border-t border-twBorder pt-16">
                         <h3 class="text-center text-twAzul font-bold uppercase tracking-[0.2em] text-sm mb-10 reveal">Socios Estratégicos</h3>
                         <div class="grid grid-cols-2 gap-8">
-                            <div class="reveal bg-twCard rounded-2xl p-8 flex flex-col items-center justify-center border border-twBorder hover:shadow-xl hover:shadow-twAzul/10 hover:-translate-y-1 transition-all">
+                            <div class="reveal bg-[var(--bg-card-alt)] rounded-2xl p-8 flex flex-col items-center justify-center border border-twBorder hover:shadow-lg hover:shadow-twAzul/10 hover:-translate-y-1 transition-all">
                                 <img src="assets/img/clientes/DEVCO.jpeg" alt="DEVCO" class="h-16 w-auto object-contain mb-4">
                                 <p class="font-bold text-twText text-center">DEVCO</p>
                             </div>
-                            <div class="reveal bg-twCard rounded-2xl p-8 flex flex-col items-center justify-center border border-twBorder hover:shadow-xl hover:shadow-twAzul/10 hover:-translate-y-1 transition-all">
+                            <div class="reveal bg-[var(--bg-card-alt)] rounded-2xl p-8 flex flex-col items-center justify-center border border-twBorder hover:shadow-lg hover:shadow-twAzul/10 hover:-translate-y-1 transition-all">
                                 <img src="assets/img/clientes/syntax.jpg" alt="SYNTAX" class="h-16 w-auto object-contain mb-4">
                                 <p class="font-bold text-twText text-center">SYNTAX</p>
                             </div>
@@ -235,6 +257,17 @@
                                 <span>Res. El Llano 2da. Etapa, 5ta. Calle Catacamas Olancho, 16201</span>
                             </div>
                         </div>
+                        <div class="mt-10 pt-8 border-t border-twBlanco/20">
+                            <p class="text-xs font-bold uppercase tracking-[0.2em] text-twBlanco/60 mb-4">Síguenos</p>
+                            <div class="flex gap-4">
+                                <a href="https://www.facebook.com/technoworldhn" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all">
+                                    <ion-icon name="logo-facebook" class="text-xl"></ion-icon>
+                                </a>
+                                <a href="https://www.instagram.com/technoworld16/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all">
+                                    <ion-icon name="logo-instagram" class="text-xl"></ion-icon>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="p-16">
                         <form id="contactForm" action="send.php" method="POST" class="space-y-8">
@@ -268,7 +301,7 @@
                                 <label class="block text-xs font-bold uppercase text-twFaint mb-2">Mensaje</label>
                                 <textarea name="mensaje" required rows="4" class="w-full bg-[var(--bg-input)] border border-[var(--border-light)] rounded-xl px-4 py-4 outline-none focus:border-twAzul resize-none"></textarea>
                             </div>
-                            <button type="submit" id="submitBtn" class="w-full bg-twAzul text-white py-5 rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-twAzul/30 transition-all">Enviar Mensaje</button>
+                            <button type="submit" id="submitBtn" class="w-full btn-primary text-white py-5 rounded-xl font-bold text-lg">Enviar Mensaje</button>
                             <div id="formFeedback" class="hidden text-center text-sm font-semibold"></div>
                         </form>
                     </div>
@@ -276,7 +309,7 @@
             </div>
         </section>
         <!-- Map -->
-        <section class="py-20 bg-[var(--bg-card)]">
+        <section id="ubicacion" class="py-20 bg-[var(--bg-card)]">
             <div class="container mx-auto px-6">
                 <div class="max-w-6xl mx-auto">
                     <div class="text-center mb-14 reveal">
@@ -287,7 +320,7 @@
                         <div class="md:col-span-3 rounded-3xl overflow-hidden shadow-2xl border border-twBorder h-[380px]">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.5156631442703!2d-85.87524279375384!3d14.845677501198649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6c73a0e7bc8e93%3A0x9a5fbc44725d60f8!2sTechno%20World!5e0!3m2!1ses-419!2shn!4v1781903959198!5m2!1ses-419!2shn" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
-                        <div class="md:col-span-2 bg-twCard p-10 rounded-3xl shadow-xl border border-twBorder">
+                        <div class="md:col-span-2 bg-[var(--bg-card-alt)] p-10 rounded-3xl shadow-xl border border-twBorder">
                             <div class="flex items-center gap-4 mb-8">
                                 <div class="w-14 h-14 bg-twAzul/10 rounded-2xl flex items-center justify-center shrink-0">
                                     <ion-icon name="location-outline" class="text-3xl text-twAzul"></ion-icon>
@@ -334,13 +367,24 @@
                     <span class="text-xl font-display font-extrabold tracking-tight">TECHNO WORLD</span>
                 </div>
                 <p class="text-twBlanco/40 leading-relaxed">Liderando la innovación tecnológica con compromiso y excelencia técnica desde 2010.</p>
+                <div class="flex gap-4 mt-8">
+                    <a href="https://www.facebook.com/technoworldhn" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-twBlanco/10 flex items-center justify-center hover:bg-twAzul transition-all">
+                        <ion-icon name="logo-facebook" class="text-lg"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/technoworld16/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-twBlanco/10 flex items-center justify-center hover:bg-twAzul transition-all">
+                        <ion-icon name="logo-instagram" class="text-lg"></ion-icon>
+                    </a>
+                </div>
             </div>
             <div>
                 <h4 class="font-bold mb-8 uppercase tracking-widest text-xs text-twAzul">Navegación</h4>
                 <ul class="space-y-4 text-twBlanco/60">
                     <li><a href="#inicio" class="hover:text-twBlanco transition-colors">Inicio</a></li>
                     <li><a href="#servicios" class="hover:text-twBlanco transition-colors">Servicios</a></li>
-                    <li><a href="#empresa" class="hover:text-twBlanco transition-colors">Nuestra Empresa</a></li>
+                    <li><a href="#clientes" class="hover:text-twBlanco transition-colors">Clientes</a></li>
+                    <li><a href="#empresa" class="hover:text-twBlanco transition-colors">Empresa</a></li>
+                    <li><a href="#ubicacion" class="hover:text-twBlanco transition-colors">Ubicación</a></li>
+                    <li><a href="#contacto" class="hover:text-twBlanco transition-colors">Contacto</a></li>
                 </ul>
             </div>
             <div>
@@ -363,6 +407,11 @@
             &copy; 2026 TECHNO WORLD. Todos los derechos reservados.
         </div>
     </footer>
+    <!-- Scroll to Top -->
+    <button id="scrollTop" aria-label="Volver arriba">
+        <ion-icon name="chevron-up"></ion-icon>
+    </button>
+
     <!-- WhatsApp Float -->
     <a href="https://wa.me/50492093796" target="_blank" rel="noopener noreferrer" class="whatsapp-float fixed bottom-8 right-8 z-50 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-xl hover:scale-110 hover:bg-green-400 transition-all duration-300">
         <ion-icon name="logo-whatsapp" class="text-3xl text-white"></ion-icon>
@@ -453,6 +502,17 @@
                     }
                     submitBtn.disabled = false;
                     submitBtn.textContent = "Enviar Mensaje";
+                });
+            }
+
+            // Scroll to top
+            const scrollBtn = document.getElementById("scrollTop");
+            if (scrollBtn) {
+                window.addEventListener("scroll", () => {
+                    scrollBtn.classList.toggle("visible", window.scrollY > 500);
+                }, { passive: true });
+                scrollBtn.addEventListener("click", () => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
                 });
             }
         });
